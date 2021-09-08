@@ -6,3 +6,5 @@ export interface EmployeeRow {
 }
 
 export type Strategy = 'email' | 'phone' | 'email_or_phone';
+
+export type EmployeeRowReducer = (accumulator: EmployeeRow[], current: EmployeeRow) => EmployeeRow[];
