@@ -11,6 +11,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx"
   },
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6"
+  },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",
     "@types/jest": "^27.0.1",
