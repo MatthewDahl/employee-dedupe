@@ -4,3 +4,5 @@ export interface EmployeeRow {
   Email: string;
   Phone: string;
 }
+
+export type Strategy = 'email' | 'phone' | 'email_or_phone';

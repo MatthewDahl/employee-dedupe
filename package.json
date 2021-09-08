@@ -12,6 +12,7 @@
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@fast-csv/format": "^4.3.5",
     "@fast-csv/parse": "^4.3.6"
   },
   "devDependencies": {
