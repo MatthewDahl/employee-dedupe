@@ -5,6 +5,7 @@ export interface EmployeeRow {
   Phone: string;
 }
 
-export type Strategy = 'email' | 'phone' | 'email_or_phone';
+export const Strategies = ['email', 'phone', 'email_or_phone'] as const;
+export type Strategy = typeof Strategies[number];
 
 export type EmployeeRowReducer = (accumulator: EmployeeRow[], current: EmployeeRow) => EmployeeRow[];
