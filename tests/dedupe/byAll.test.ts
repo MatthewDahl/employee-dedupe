@@ -7,7 +7,7 @@ describe('ops/dedupe - byAll()', () => {
       { FirstName: 'Tester01', LastName: 'McTesterton02', Email: 'email01', Phone: 'phone01' },
       { FirstName: 'Tester02', LastName: 'McTesterton02', Email: 'email02', Phone: 'phone02' },
       { FirstName: 'Tester02', LastName: 'McTesterton02', Email: 'email02', Phone: 'phone02' },
-      { FirstName: 'Tester02', LastName: 'McTesterton02', Email: 'email03', Phone: 'phone02' },
+      { FirstName: 'Tester02', LastName: 'McTesterton02', Email: 'email03', Phone: 'phone01' },
     ];
     const result = values.reduce(byAll, []);
     expect(result.length).toBe(2);
