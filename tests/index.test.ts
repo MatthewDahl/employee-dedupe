@@ -1,12 +1,20 @@
-import { main } from '@src/index';
-
 describe('CLI Entry Tests', () => {
-  it('can run tests', async () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
+  it.each([
+    { file: 'tests/data/employees.csv', strategy: 'email', expected: 101 },
+    { file: 'tests/data/employees.csv', strategy: 'phone', expected: 101 },
+    { file: 'tests/data/employees.csv', strategy: 'email_or_phone', expected: 100 },
+  ])('can dedupe using <$strategy> strategy', async ({ file, strategy, expected }) => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+    process.argv = ['ts', 'jest', 'dedupe', file, strategy];
 
-    main();
+    const { main } = await import('@src/index');
+    await main();
 
-    expect(consoleSpy).toHaveBeenCalledWith('CLI Entry');
+    expect(consoleSpy).toHaveBeenCalledWith('Deduped entries: %s', expected);
 
     consoleSpy.mockRestore();
   });
