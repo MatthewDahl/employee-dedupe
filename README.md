@@ -3,6 +3,18 @@
 A CLI application to process csv files containing employee records,
 and remove duplicate rows based on chosen deduplication strategy.
 
+## setup
+
+**Ensure you have Node 14.x LTS installed/setup**
+
+> Version pinned w/ [Volta](https://volta.sh/)
+
+_Navigate to project directory and install dependencies_
+
+```sh
+npm install
+```
+
 ## usage
 
 ```sh
