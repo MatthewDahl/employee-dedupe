@@ -6,7 +6,7 @@ import { parseFile } from '@fast-csv/parse';
  * Read a given CSV file into an object
  */
 export async function read(file: string): Promise<EmployeeRow[]> {
-  const fullPath = resolve(__dirname, file);
+  const fullPath = resolve(process.cwd(), file);
 
   const data: EmployeeRow[] = [];
   const parser = parseFile<EmployeeRow, EmployeeRow>(fullPath, {

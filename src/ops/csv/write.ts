@@ -8,7 +8,7 @@ import { writeToPath } from '@fast-csv/format';
 export async function write(values: EmployeeRow[], file: string, strategyUsed: Strategy): Promise<void> {
   const { dir, ext, name } = parseFile(file);
   const newFileName = `${Date.now()}_deduped_by_${strategyUsed}_${name}${ext}`;
-  const newFile = resolve(dir, newFileName);
+  const newFile = resolve(process.cwd(), dir, newFileName);
 
   return await new Promise<void>((resolve, reject) => {
     writeToPath(newFile, values, { headers: true })
